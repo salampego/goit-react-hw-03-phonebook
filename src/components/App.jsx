@@ -47,6 +47,17 @@ export class App extends Component {
     this.setState({ filter: e.currentTarget.value });
   };
 
+  componentDidMount() {
+    this.setState({
+      contacts: JSON.parse(localStorage.getItem('contactLocal')),
+    });
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.contacts !== prevState) {
+      localStorage.setItem('contactLocal', JSON.stringify(this.state.contacts));
+    }
+  }
+
   render = () => {
     const { contacts, filter } = this.state;
     const normalizeFilter = filter.toLowerCase();

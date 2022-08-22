@@ -13,6 +13,7 @@ export class ContactForm extends Component {
   };
 
   onSubmit = e => {
+    console.log(e);
     e.preventDefault();
 
     this.props.submit(this.state);
