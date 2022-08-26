@@ -62,10 +62,10 @@ export class App extends Component {
   render = () => {
     const { contacts, filter } = this.state;
     const normalizeFilter = filter.toLowerCase();
-    const visibleContact = contacts.filter(filters => {
-      console.log(filters);
-      return filters.name.toLowerCase().includes(normalizeFilter);
-    });
+    // const visibleContact = contacts.filter(filters => {
+    //   console.log(normalizeFilter);
+    //   return filters.name.toLowerCase().includes(normalizeFilter);
+    // });
     return (
       <div className="container">
         <div className="form-container">
@@ -75,7 +75,7 @@ export class App extends Component {
         <h2>Contacts</h2>
         <Filter filter={this.filterInput} />
         <ContactList
-          contact={visibleContact}
+          // contact={visibleContact}
           deleteContact={this.deleteContact}
         />
       </div>
